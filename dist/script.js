@@ -32,6 +32,9 @@ function delay(delayInMs) {
 }
 async function playBackSequence(sequence, delayInMs) {
     model.allowPlayerClicks = false;
+    for (const light of lightList) {
+        light?.classList.remove("allow-click");
+    }
     console.log("model.allowPlayerClicks =", model.allowPlayerClicks);
     for (const lightIdx of sequence) {
         const element = lightList[lightIdx];
@@ -41,6 +44,9 @@ async function playBackSequence(sequence, delayInMs) {
         element?.classList.remove("on");
     }
     model.allowPlayerClicks = true;
+    for (const light of lightList) {
+        light?.classList.add("allow-click");
+    }
 }
 async function handleClick(element, lightIdx, sequence) {
     if (!model.allowPlayerClicks)
@@ -60,6 +66,9 @@ async function handleClick(element, lightIdx, sequence) {
         model.currentIndex++;
         if (model.currentIndex === sequence.length) {
             model.allowPlayerClicks = false;
+            for (const light of lightList) {
+                light?.classList.remove("allow-click");
+            }
             model.currentIndex = 0;
             await delay(1000);
             extendSequence(sequence);
