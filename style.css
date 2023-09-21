@@ -1,0 +1,75 @@
+:root {
+  --text-color: #cccccc;
+  --bg-color: #151515;
+  --green-off: hsl(120, 45%, 25%);
+  --green-on: hsl(120, 100%, 50%);
+  --red-off: hsl(0, 45%, 25%);
+  --red-on: hsl(0, 100%, 50%);
+  --yellow-off: hsl(60, 45%, 25%);
+  --yellow-on: hsl(60, 100%, 50%);
+  --blue-off: hsl(225, 45%, 25%);
+  --blue-on: hsl(225, 100%, 50%);
+}
+
+body {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-template-rows: repeat(2, 150px);
+  gap: 1rem;
+  text-align: center;
+  font-size: 100px;
+}
+
+.green {
+  transition: 300ms;
+  background-color: var(--green-off);
+}
+.green.on {
+  transition: 80ms;
+  background-color: var(--green-on);
+  box-shadow: 0 0 25px var(--green-on);
+}
+
+.red {
+  transition: 300ms;
+  background-color: var(--red-off);
+}
+.red.on {
+  transition: 80ms;
+  background-color: var(--red-on);
+  box-shadow: 0 0 25px var(--red-on);
+}
+
+.yellow {
+  transition: 300ms;
+  background-color: var(--yellow-off);
+}
+.yellow.on {
+  transition: 80ms;
+  background-color: var(--yellow-on);
+  box-shadow: 0 0 25px var(--yellow-on);
+}
+
+.blue {
+  transition: 300ms;
+  background-color: var(--blue-off);
+}
+.blue.on {
+  transition: 80ms;
+  background-color: var(--blue-on);
+  box-shadow: 0 0 25px var(--blue-on);
+}/*# sourceMappingURL=style.css.map */
